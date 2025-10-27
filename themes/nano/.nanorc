@@ -1,0 +1,29 @@
+# --- UI bars (ok to keep backgrounds) ---
+set titlecolor brightmagenta,black
+set statuscolor brightmagenta,black
+set selectedcolor black,brightmagenta
+set errorcolor brightwhite,magenta
+set functioncolor brightmagenta
+set keycolor brightwhite
+set numbercolor brightmagenta
+set linenumbers
+
+# Homebrew syntaxes
+include "/opt/homebrew/share/nano/*.nanorc"
+
+# --- Python pink overrides (NO background colors) ---
+extendsyntax python color brightmagenta  "^\s*#.*$"
+extendsyntax python color brightmagenta  "^\s*@\w+"
+extendsyntax python color brightmagenta  "\<(def|class)\>"
+
+extendsyntax python color magenta        "\<(if|elif|else|for|while|try|except|finally|with|as|return|yield|import|from|pass|break|continue|raise|assert|lambda|global|nonlocal|match|case)\>"
+extendsyntax python color magenta        "\<(True|False|None)\>"
+extendsyntax python color magenta        "\<(print|len|range|open|map|zip|enumerate|isinstance|type|dir|vars|id|sum|min|max|any|all|sorted|reversed)\>"
+
+extendsyntax python color brightwhite    "\"([^\"\\]|\\.)*\"|'([^'\\]|\\.)*'"
+extendsyntax python color brightwhite    "f\"([^\"\\]|\\.)*\"|f'([^'\\]|\\.)*'"
+
+extendsyntax python color brightmagenta  "\<[0-9]+(\.[0-9]+)?([eE][+-]?[0-9]+)?\>"
+extendsyntax python color brightmagenta  "\<__[A-Za-z_]+__\>"
+
+extendsyntax python icolor brightwhite,magenta "(TODO|FIXME|HACK|NOTE).*"
